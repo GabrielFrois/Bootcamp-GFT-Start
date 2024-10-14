@@ -21,9 +21,21 @@ let heroi = [
     }
 ]
 
+function determinarAtaque(tipo) {
+    if (tipo === "Mago") {
+        return "magia";
+    } else if (tipo === "Guerreiro") {
+        return "espada";
+    } else if (tipo === "Monge") {
+        return "artes marciais";
+    } else if (tipo === "Ninja") {
+        return "shuriken";
+    }
+}
+
 function atacar(heroi) {
     const ataque = determinarAtaque(heroi.tipo);
     console.log(`O ${heroi.tipo} atacou usando ${ataque}.`);
 }
 
-atacar(heroi[0]);
+heroi.forEach(atacar);
